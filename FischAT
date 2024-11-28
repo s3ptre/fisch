@@ -1,2 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
-loadstring(game:HttpGet('https://darkscripts.space/scripts/1014130817200558080.lua',true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/s3ptre/New/refs/heads/main/Click%20Teleport"))()
